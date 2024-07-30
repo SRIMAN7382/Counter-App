@@ -1,38 +1,110 @@
+@keyframes coc {
+  0% {
+    background-color: rgba(31, 219, 153, 0.8);
+  }
+  50% {
+    background-color: rgba(255, 105, 160, 0.8);
+  }
+  100% {
+    background-color: rgba(150, 198, 30, 0.8);
+  }
+}
+
+:root {
+  background-color: rgb(168, 105, 227);
+  animation: coc 5s infinite;
+}
+
 .App {
   text-align: center;
+  border: 2px solid black;
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: rgba(91, 205, 205, 0.6);
+  color: beige;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  background-color: rgb(217, 157, 45);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button:hover {
+  background-color: rgb(108, 229, 108);
+  transform: scale(1.05);
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: rgba(31, 94, 219, 0.8);
+  }
+  50% {
+    background-color: rgba(255, 105, 180, 0.8);
+  }
+  100% {
+    background-color: rgba(59, 181, 229, 0.8);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+  position: inherit;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(219, 191, 31, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  margin-bottom: 70px;
+  animation: colorChange 5s infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .App {
+    width: 95%;
+    margin: 50px auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  h2 {
+    top: 5px;
+    padding: 8px 16px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  h2 {
+    top: 0;
+    padding: 6px 12px;
+    margin-bottom: 30px;
   }
 }
